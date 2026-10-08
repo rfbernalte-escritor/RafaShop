@@ -1,180 +1,410 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>RafaShop | Tu tienda online</title>
+<html lang="es"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<title>RafaShop | Tu tienda online</title>
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            color: #222;
-        }
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        color: #222;
+    }
+
+    /* CABECERA */
+
+    header {
+        background: #111;
+        color: white;
+        padding: 18px 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .logo {
+        font-size: 30px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 25px;
+        font-size: 16px;
+    }
+
+    nav a:hover {
+        color: #cc5500;
+    }
+
+    /* PORTADA */
+
+    .hero {
+        min-height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 80px 20px;
+        background: white;
+    }
+
+    .hero h1 {
+        font-size: 56px;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 22px;
+        max-width: 650px;
+        margin-bottom: 35px;
+        line-height: 1.5;
+    }
+
+    .boton {
+        display: inline-block;
+        background: #cc5500;
+        color: white;
+        padding: 15px 32px;
+        border-radius: 7px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .boton:hover {
+        background: #a94400;
+        transform: translateY(-2px);
+    }
+
+    /* SECCIÓN PRODUCTOS */
+
+    .productos {
+        padding: 70px 7%;
+        text-align: center;
+    }
+
+    .productos h2 {
+        font-size: 38px;
+        margin-bottom: 15px;
+    }
+
+    .productos-intro {
+        font-size: 18px;
+        margin-bottom: 45px;
+        color: #555;
+    }
+
+    .contenedor-productos {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .producto {
+        background: white;
+        width: 280px;
+        min-height: 230px;
+        padding: 30px 25px;
+        border-radius: 12px;
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.3s;
+    }
+
+    .producto:hover {
+        transform: translateY(-5px);
+    }
+
+    .producto-icono {
+        font-size: 42px;
+        margin-bottom: 18px;
+    }
+
+    .producto h3 {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .producto p {
+        color: #555;
+        line-height: 1.5;
+    }
+
+    /* SOBRE RAFASHOP */
+
+    .sobre {
+        background: white;
+        padding: 70px 7%;
+        text-align: center;
+    }
+
+    .sobre h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .sobre p {
+        max-width: 750px;
+        margin: auto;
+        font-size: 18px;
+        line-height: 1.7;
+        color: #555;
+    }
+
+    /* CONTACTO */
+
+    .contacto {
+        padding: 70px 20px;
+        text-align: center;
+        background: #eeeeee;
+    }
+
+    .contacto h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .contacto p {
+        font-size: 18px;
+        margin-bottom: 25px;
+    }
+
+    /* PIE */
+
+    footer {
+        background: #111;
+        color: white;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    footer p {
+        margin: 5px;
+    }
+
+    /* MÓVIL */
+
+    @media (max-width: 700px) {
 
         header {
-            background-color: #111;
-            color: white;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
+            flex-direction: column;
+            gap: 15px;
+            padding: 18px 20px;
         }
 
         nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
+            margin: 0 8px;
+            font-size: 14px;
         }
 
         .hero {
-            text-align: center;
-            padding: 80px 20px;
-            background-color: white;
+            min-height: 450px;
         }
 
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
+            font-size: 42px;
         }
 
         .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
+            font-size: 18px;
         }
 
-        .boton {
-            display: inline-block;
-            background-color: #cc5500;
-            color: white;
-            padding: 14px 28px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .productos {
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        .productos h2 {
-            font-size: 32px;
-            margin-bottom: 30px;
-        }
-
-        .contenedor-productos {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
+        .productos h2,
+        .sobre h2,
+        .contacto h2 {
+            font-size: 30px;
         }
 
         .producto {
-            background-color: white;
-            width: 260px;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 350px;
         }
+    }
+</style>
 
-        .producto h3 {
-            margin-bottom: 10px;
-        }
-
-        .producto p {
-            margin-bottom: 15px;
-        }
-
-        footer {
-            background-color: #111;
-            color: white;
-            text-align: center;
-            padding: 25px;
-            margin-top: 30px;
-        }
-
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            nav a {
-                margin: 0 8px;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-    <header>
-        <div class="logo">RafaShop</div>
+<!-- CABECERA -->
 
-        <nav>
-            <a href="#">Inicio</a>
-            <a href="#productos">Productos</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
-    </header>
+<header>
 
-    <section class="hero">
-        <h1>Bienvenido a RafaShop</h1>
+    <div class="logo">
+        RafaShop
+    </div>
 
-        <p>
-            Un espacio para descubrir nuestros productos y servicios.
-        </p>
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#sobre">Sobre nosotros</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
 
-        <a href="#productos" class="boton">
-            Ver productos
-        </a>
-    </section>
+</header>
 
-    <section class="productos" id="productos">
 
-        <h2>Nuestros productos</h2>
+<!-- PORTADA -->
 
-        <div class="contenedor-productos">
+<section class="hero">
 
-            <div class="producto">
-                <h3>Próximamente</h3>
-                <p>Aquí aparecerán nuestros primeros productos.</p>
+    <h1>
+        Bienvenido a RafaShop
+    </h1>
+
+    <p>
+        Un espacio donde iremos reuniendo productos,
+        libros, servicios y nuevos proyectos.
+    </p>
+
+    <a href="#productos" class="boton">
+        Entrar en la tienda
+    </a>
+
+</section>
+
+
+<!-- PRODUCTOS -->
+
+<section class="productos" id="productos">
+
+    <h2>
+        Nuestra tienda
+    </h2>
+
+    <p class="productos-intro">
+        Poco a poco iremos incorporando nuestros productos.
+    </p>
+
+    <div class="contenedor-productos">
+
+
+        <div class="producto">
+
+            <div class="producto-icono">
+                📚
             </div>
 
-            <div class="producto">
-                <h3>Libros</h3>
-                <p>Próximamente podrás encontrar aquí nuestros libros.</p>
-            </div>
+            <h3>
+                Libros
+            </h3>
 
-            <div class="producto">
-                <h3>Servicios</h3>
-                <p>También iremos incorporando nuestros servicios.</p>
-            </div>
+            <p>
+                Descubre los libros escritos por Rafa Fernández.
+            </p>
 
         </div>
 
-    </section>
 
-    <footer id="contacto">
-        <p>© 2026 RafaShop - Rafa Fernández</p>
-    </footer>
+        <div class="producto">
 
-</body>
-</html>
+            <div class="producto-icono">
+                ✍️
+            </div>
+
+            <h3>
+                Escritura
+            </h3>
+
+            <p>
+                Servicios relacionados con la escritura,
+                corrección y creación de textos.
+            </p>
+
+        </div>
+
+
+        <div class="producto">
+
+            <div class="producto-icono">
+                💻
+            </div>
+
+            <h3>
+                Servicios digitales
+            </h3>
+
+            <p>
+                Próximamente incorporaremos nuevos servicios
+                digitales.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- SOBRE RAFASHOP -->
+
+<section class="sobre" id="sobre">
+
+    <h2>
+        Sobre RafaShop
+    </h2>
+
+    <p>
+        RafaShop nace como un proyecto para reunir en un mismo
+        espacio diferentes productos, servicios y proyectos
+        creados por Rafa Fernández.
+    </p>
+
+</section>
+
+
+<!-- CONTACTO -->
+
+<section class="contacto" id="contacto">
+
+    <h2>
+        Contacto
+    </h2>
+
+    <p>
+        ¿Tienes alguna pregunta o quieres saber más?
+    </p>
+
+    <a href="mailto:contacto@ejemplo.com" class="boton">
+        Contactar
+    </a>
+
+</section>
+
+
+<!-- PIE DE PÁGINA -->
+
+<footer>
+
+    <p>
+        © 2026 RafaShop
+    </p>
+
+    <p>
+        Rafa Fernández
+    </p>
+
+</footer>
+
+</body> </html>
