@@ -1,72 +1,333 @@
 <!DOCTYPE html>
+
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>     <meta charset="UTF-8">
 
-    <title>RafaShop</title>
+```
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RafaShop | Rafa Fernández</title>
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    /* CABECERA */
+
+    header {
+        background-color: #222;
+        color: white;
+        text-align: center;
+        padding: 35px 20px;
+    }
+
+    header h1 {
+        font-size: 42px;
+        margin-bottom: 8px;
+    }
+
+    header p {
+        font-size: 18px;
+    }
+
+    /* MENÚ */
+
+    nav {
+        background-color: #333;
+        text-align: center;
+        padding: 15px 10px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 16px;
+    }
+
+    nav a:hover {
+        color: #cc5500;
+    }
+
+    /* PRESENTACIÓN */
+
+    .presentacion {
+        text-align: center;
+        padding: 60px 20px 40px;
+        background-color: white;
+    }
+
+    .presentacion h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .presentacion p {
+        max-width: 750px;
+        margin: 0 auto;
+        font-size: 18px;
+    }
+
+    /* PRODUCTOS */
+
+    .productos {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 50px 20px;
+    }
+
+    .productos h2 {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 35px;
+    }
+
+    .contenedor-productos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 25px;
+    }
+
+    .producto {
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px 20px;
+        text-align: center;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.10);
+    }
+
+    .producto h3 {
+        font-size: 23px;
+        margin-bottom: 15px;
+    }
+
+    .producto p {
+        margin-bottom: 20px;
+    }
+
+    /* BOTONES */
+
+    .boton {
+        display: inline-block;
+        background-color: #cc5500;
+        color: white;
+        text-decoration: none;
+        padding: 12px 24px;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .boton:hover {
+        background-color: #a94400;
+    }
+
+    /* CONTACTO */
+
+    .contacto {
+        background-color: white;
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .contacto h2 {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .contacto p {
+        max-width: 700px;
+        margin: 0 auto 20px;
+    }
+
+    /* PIE DE PÁGINA */
+
+    footer {
+        background-color: #222;
+        color: white;
+        text-align: center;
+        padding: 25px 20px;
+    }
+
+    /* MÓVILES */
+
+    @media (max-width: 600px) {
+
+        header h1 {
+            font-size: 34px;
+        }
+
+        nav a {
+            display: inline-block;
+            margin: 5px 8px;
+        }
+
+        .presentacion h2 {
+            font-size: 27px;
+        }
+
+        .presentacion p {
+            font-size: 16px;
+        }
+
+    }
+
+</style>
+```
+
 </head>
 
 <body>
 
-    <header>
-        <h1>RafaShop</h1>
+```
+<!-- CABECERA -->
 
-        <nav>
-            <a href="#">Inicio</a>
-            <a href="#productos">Productos</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
-    </header>
+<header>
+
+    <h1>RafaShop</h1>
+
+    <p>La tienda de Rafa Fernández</p>
+
+</header>
 
 
-    <main>
+<!-- MENÚ -->
 
-        <section>
-            <h2>Bienvenido a RafaShop</h2>
+<nav>
+
+    <a href="#">Inicio</a>
+
+    <a href="#productos">Productos</a>
+
+    <a href="#contacto">Contacto</a>
+
+</nav>
+
+
+<!-- PRESENTACIÓN -->
+
+<section class="presentacion">
+
+    <h2>Bienvenido a RafaShop</h2>
+
+    <p>
+        Un espacio creado por Rafa Fernández donde
+        iremos incorporando poco a poco productos,
+        libros, servicios y nuevos proyectos.
+    </p>
+
+</section>
+
+
+<!-- PRODUCTOS -->
+
+<section class="productos" id="productos">
+
+    <h2>Nuestros productos</h2>
+
+    <div class="contenedor-productos">
+
+
+        <!-- PRIMER PRODUCTO -->
+
+        <div class="producto">
+
+            <h3>Próximamente</h3>
 
             <p>
-                Un espacio para descubrir nuestros productos y servicios.
+                Estamos preparando los primeros
+                productos de RafaShop.
             </p>
 
-            <a href="#productos">Ver productos</a>
-        </section>
+            <a href="#" class="boton">
+                Ver productos
+            </a>
+
+        </div>
 
 
-        <section id="productos">
+        <!-- SEGUNDO PRODUCTO -->
 
-            <h2>Nuestros productos</h2>
+        <div class="producto">
 
-            <div>
-                <h3>Próximamente</h3>
-                <p>
-                    Aquí aparecerán nuestros primeros productos.
-                </p>
-            </div>
+            <h3>Libros</h3>
 
-            <div>
-                <h3>Libros</h3>
-                <p>
-                    Próximamente podrás encontrar aquí nuestros libros.
-                </p>
-            </div>
+            <p>
+                Próximamente podrás encontrar aquí
+                los libros de Rafa Fernández.
+            </p>
 
-            <div>
-                <h3>Servicios</h3>
-                <p>
-                    También iremos incorporando nuestros servicios.
-                </p>
-            </div>
+            <a href="#" class="boton">
+                Próximamente
+            </a>
 
-        </section>
-
-    </main>
+        </div>
 
 
-    <footer id="contacto">
-        <p>© 2026 RafaShop - Rafa Fernández</p>
-    </footer>
+        <!-- TERCER PRODUCTO -->
+
+        <div class="producto">
+
+            <h3>Escritura</h3>
+
+            <p>
+                Servicios y trabajos relacionados
+                con la escritura y los textos.
+            </p>
+
+            <a href="#" class="boton">
+                Próximamente
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- CONTACTO -->
+
+<section class="contacto" id="contacto">
+
+    <h2>Contacto</h2>
+
+    <p>
+        Si quieres contactar con Rafa Fernández,
+        próximamente podrás hacerlo desde aquí.
+    </p>
+
+    <a href="#" class="boton">
+        Contactar
+    </a>
+
+</section>
+
+
+<!-- PIE -->
+
+<footer>
+
+    <p>
+        © 2026 Rafa Fernández · RafaShop
+    </p>
+
+</footer>
+```
 
 </body>
 
